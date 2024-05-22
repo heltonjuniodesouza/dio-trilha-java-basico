@@ -16,15 +16,21 @@ public class ContaTerminal {
         System.out.println();
         System.out.println("Por favor, digite o número da Conta: (1021)");
         numero = sc.nextInt();
+        sc.nextLine();
 
         System.out.println("Agora digite o número da Agência: (067-8)");
         agencia = sc.next();
+        sc.nextLine();
 
         System.out.println("Me informe seu nome: ");
         nomeCliente = sc.next();
         sc.nextLine();
 
-        System.out.println("Agora me informa seu saldo atual: ");
+        System.out.println("Agora me informe seu saldo atual: ");
+        while (!sc.hasNextDouble()) {
+            System.out.println("Entrada inválida. Por favor, digite um valor numérico para o saldo:");
+            sc.next();
+        }
         saldo = sc.nextDouble();
 
         System.out.println();
